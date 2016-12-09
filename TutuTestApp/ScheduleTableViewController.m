@@ -7,15 +7,39 @@
 //
 
 #import "ScheduleTableViewController.h"
+#import "ModelCities.h"
 
 @interface ScheduleTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *stationFromButton;
+@property (weak, nonatomic) IBOutlet UIButton *stationToButton;
+@property (weak, nonatomic) IBOutlet UILabel *firstStationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondStationLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *reverseButton;
 
 @end
 
 @implementation ScheduleTableViewController
 
+- (IBAction)reverseButtonTapped:(id)sender {
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        CGPoint cgpoint = self.firstStationLabel.center;
+        self.firstStationLabel.center = self.secondStationLabel.center;
+        self.secondStationLabel.center = cgpoint;
+    }];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[ModelCities sharedInstance] loadCitiesFrom];
+    [[ModelCities sharedInstance] loadCitiesTo];
+    
+    NSLog(@"%@", [ModelCities sharedInstance].citiesFrom[3].cityTitle);
+    NSLog(@"%f", [ModelCities sharedInstance].citiesTo[5].point.latitude);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
