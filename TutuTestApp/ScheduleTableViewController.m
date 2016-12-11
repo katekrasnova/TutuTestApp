@@ -36,6 +36,12 @@
             label.text = strDirection;
         }
     };
+    NSLog(@"%f, %f, %f, %f", self.secondStationLabel.frame.origin.x, self.secondStationLabel.frame.origin.y, self.secondStationLabel.frame.size.width, self.secondStationLabel.frame.size.height);
+    
+    //Return labels for init places
+    self.firstStationLabel.frame = CGRectMake(52.0, 40.0, self.view.frame.size.width - 72, 20.0);
+    self.secondStationLabel.frame = CGRectMake(52.0, 81.0, self.view.frame.size.width - 72, 20.0);
+
     setStationLabelText(self.firstStationLabel, kStationFrom);
     setStationLabelText(self.secondStationLabel, kStationTo);
     
