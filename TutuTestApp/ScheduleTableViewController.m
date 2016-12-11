@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *stationToButton;
 @property (weak, nonatomic) IBOutlet UILabel *firstStationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondStationLabel;
+@property (nonatomic) BOOL isFirstLabelForStationFrom;
 
 @property (weak, nonatomic) IBOutlet UIButton *reverseButton;
 
@@ -22,101 +23,96 @@
 
 @implementation ScheduleTableViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    void (^setStationLabelText)() = ^(UILabel *label, NSString *stationDirection) {
+        NSString *strDirection = [[NSUserDefaults standardUserDefaults]valueForKey:stationDirection];
+        if (strDirection != nil) {
+            label.textColor = [UIColor blackColor];
+            label.text = strDirection;
+        }
+    };
+    setStationLabelText(self.firstStationLabel, @"stationFrom");
+    setStationLabelText(self.secondStationLabel, @"stationTo");
+    
+    [self.tableView reloadData];
+    self.tableView.tableFooterView = [UIView new];  //hide separator for empty rows
+}
+
+#pragma mark - IBActions
+
 - (IBAction)reverseButtonTapped:(id)sender {
+    
+    //If the user has not selected any station exit method
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"stationFrom"] == nil && [[NSUserDefaults standardUserDefaults] valueForKey:@"stationTo"] == nil) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Выберите станцию" message:@"Вы не выбрали станцию отправления и/или прибытия" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *acOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:acOK];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
+    //Change stationFrom to stationTo, stationTo to stationFrom and, accordingly, their labels with animation
+    NSString *stationFrom = [[NSUserDefaults standardUserDefaults]valueForKey:@"stationFrom"];
+    [[NSUserDefaults standardUserDefaults]setValue:[[NSUserDefaults standardUserDefaults]valueForKey:@"stationTo"] forKey:@"stationFrom"];
+    [[NSUserDefaults standardUserDefaults]setValue:stationFrom forKey:@"stationTo"];
+
+    void (^changeStationLabelText)() = ^(UILabel *label) {
+        if ([label.text isEqualToString:@"Откуда"]) {
+            label.text = [NSString stringWithFormat:@"Куда"];
+        } else if ([label.text isEqualToString:@"Куда"]) {
+            label.text = [NSString stringWithFormat:@"Откуда"];
+        }
+    };
+    changeStationLabelText(self.firstStationLabel);
+    changeStationLabelText(self.secondStationLabel);
     
     [UIView animateWithDuration:0.3 animations:^{
         CGPoint cgpoint = self.firstStationLabel.center;
         self.firstStationLabel.center = self.secondStationLabel.center;
         self.secondStationLabel.center = cgpoint;
+        //rotate reverse button
+        self.reverseButton.imageView.transform = CGAffineTransformMakeRotation(180 * M_PI/180);
     }];
-
+    self.reverseButton.imageView.transform = CGAffineTransformMakeRotation(0);
+    
+    [self.tableView reloadData];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [[ModelCities sharedInstance] loadCitiesFrom];
-    [[ModelCities sharedInstance] loadCitiesTo];
-    
-    NSLog(@"%@", [ModelCities sharedInstance].citiesFrom[3].cityTitle);
-    NSLog(@"%f", [ModelCities sharedInstance].citiesTo[5].point.latitude);
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (IBAction)stationFromButtonTapped:(id)sender {
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isFromDirection"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)stationToButtonTapped:(id)sender {
+    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isFromDirection"];
 }
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 1;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScheduleCell" forIndexPath:indexPath];
+    cell.textLabel.numberOfLines = 0;
+    if ([[NSUserDefaults standardUserDefaults]valueForKey:@"stationFrom"] == nil || [[NSUserDefaults standardUserDefaults]valueForKey:@"stationTo"] == nil) {
+        cell.textLabel.text = @"";
+    } else {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", [[NSUserDefaults standardUserDefaults]valueForKey:@"stationFrom"], [[NSUserDefaults standardUserDefaults]valueForKey:@"stationTo"]];
+    }
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (IBAction)unwindToSchedule:(UIStoryboardSegue *)segue {
+    [self viewDidLoad];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

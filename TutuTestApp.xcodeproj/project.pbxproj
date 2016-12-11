@@ -20,6 +20,10 @@
 		D176CF401DFA26D50093D3FD /* ModelStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF3F1DFA26D50093D3FD /* ModelStation.m */; };
 		D176CF431DFA28F60093D3FD /* JSONReader.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF421DFA28F60093D3FD /* JSONReader.m */; };
 		D176CF451DFA98490093D3FD /* allStations.json in Resources */ = {isa = PBXBuildFile; fileRef = D176CF441DFA98490093D3FD /* allStations.json */; };
+		D176CF481DFB07700093D3FD /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF471DFB07700093D3FD /* ListTableViewController.m */; };
+		D176CF4B1DFB081A0093D3FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D176CF4A1DFB081A0093D3FD /* MapKit.framework */; };
+		D176CF4E1DFB08670093D3FD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF4D1DFB08670093D3FD /* DetailsViewController.m */; };
+		D176CF511DFB20120093D3FD /* StationsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF501DFB20120093D3FD /* StationsListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,13 @@
 		D176CF411DFA28F60093D3FD /* JSONReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONReader.h; sourceTree = "<group>"; };
 		D176CF421DFA28F60093D3FD /* JSONReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONReader.m; sourceTree = "<group>"; };
 		D176CF441DFA98490093D3FD /* allStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allStations.json; sourceTree = "<group>"; };
+		D176CF461DFB07700093D3FD /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
+		D176CF471DFB07700093D3FD /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
+		D176CF4A1DFB081A0093D3FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D176CF4C1DFB08670093D3FD /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		D176CF4D1DFB08670093D3FD /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		D176CF4F1DFB20120093D3FD /* StationsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationsListTableViewCell.h; sourceTree = "<group>"; };
+		D176CF501DFB20120093D3FD /* StationsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationsListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D176CF4B1DFB081A0093D3FD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +95,7 @@
 				D13C20041DF87B5F00087D16 /* TutuTestApp */,
 				D13C201E1DF87B6000087D16 /* TutuTestAppTests */,
 				D13C20031DF87B5F00087D16 /* Products */,
+				D176CF491DFB081A0093D3FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +113,7 @@
 			children = (
 				D13C202F1DFA14AB00087D16 /* Controllers */,
 				D176CF2B1DFA23890093D3FD /* Model */,
+				D176CF521DFB20180093D3FD /* View */,
 				D13C20081DF87B6000087D16 /* AppDelegate.h */,
 				D13C20091DF87B6000087D16 /* AppDelegate.m */,
 				D13C200E1DF87B6000087D16 /* Main.storyboard */,
@@ -133,6 +147,10 @@
 			children = (
 				D13C202C1DF9F3BB00087D16 /* ScheduleTableViewController.h */,
 				D13C202D1DF9F3BB00087D16 /* ScheduleTableViewController.m */,
+				D176CF461DFB07700093D3FD /* ListTableViewController.h */,
+				D176CF471DFB07700093D3FD /* ListTableViewController.m */,
+				D176CF4C1DFB08670093D3FD /* DetailsViewController.h */,
+				D176CF4D1DFB08670093D3FD /* DetailsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +171,23 @@
 				D176CF441DFA98490093D3FD /* allStations.json */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D176CF491DFB081A0093D3FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D176CF4A1DFB081A0093D3FD /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D176CF521DFB20180093D3FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D176CF4F1DFB20120093D3FD /* StationsListTableViewCell.h */,
+				D176CF501DFB20120093D3FD /* StationsListTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,13 +296,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D176CF3A1DFA26930093D3FD /* ModelCity.m in Sources */,
+				D176CF4E1DFB08670093D3FD /* DetailsViewController.m in Sources */,
 				D13C200A1DF87B6000087D16 /* AppDelegate.m in Sources */,
 				D176CF401DFA26D50093D3FD /* ModelStation.m in Sources */,
+				D176CF511DFB20120093D3FD /* StationsListTableViewCell.m in Sources */,
 				D176CF3D1DFA26B90093D3FD /* ModelCities.m in Sources */,
 				D176CF371DFA26780093D3FD /* ModelPoint.m in Sources */,
 				D13C20071DF87B6000087D16 /* main.m in Sources */,
 				D176CF431DFA28F60093D3FD /* JSONReader.m in Sources */,
 				D13C202E1DF9F3BB00087D16 /* ScheduleTableViewController.m in Sources */,
+				D176CF481DFB07700093D3FD /* ListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

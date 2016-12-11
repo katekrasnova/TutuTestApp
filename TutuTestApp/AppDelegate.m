@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ModelCities.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"stationFrom"];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"stationTo"];
+    
+    //Parse JSON and init ModelCities
+    [[ModelCities sharedInstance] loadCitiesFrom];
+    [[ModelCities sharedInstance] loadCitiesTo];
+
     return YES;
 }
 
