@@ -36,7 +36,6 @@
             label.text = strDirection;
         }
     };
-    NSLog(@"%f, %f, %f, %f", self.secondStationLabel.frame.origin.x, self.secondStationLabel.frame.origin.y, self.secondStationLabel.frame.size.width, self.secondStationLabel.frame.size.height);
     
     //Return labels for init places
     self.firstStationLabel.frame = CGRectMake(52.0, 40.0, self.view.frame.size.width - 72, 20.0);
@@ -149,7 +148,7 @@
         
         //If user selected the same stations show alert
         if ([[[NSUserDefaults standardUserDefaults]valueForKey:kStationFrom] isEqualToString:[[NSUserDefaults standardUserDefaults]valueForKey:kStationTo]]) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Выберите станцию" message:@"Станция отправления и прибытия совпадают. Выберите другую станцию" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Выберите станцию" message:@"Станции отправления и прибытия совпадают. Выберите другую станцию." preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *acOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
             [alert addAction:acOK];
             [self presentViewController:alert animated:YES completion:nil];
