@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "Constants.h"
 @import MapKit;
 
 @interface DetailsViewController () <MKMapViewDelegate>
@@ -48,14 +49,26 @@
 }
 
 - (void)setProperties {
+    
+    void (^checkDataForLabel)() = ^(UILabel *label) {
+        if ([label.text isEqualToString:@""]) {
+            label.text = @"Нет данных";
+        }
+    };
+    
     NSUserDefaults *data = [NSUserDefaults standardUserDefaults];
-    self.stationTitleLabel.text = [data valueForKey:@"selectedStationTitle"];
-    self.cityTitleLabel.text = [data valueForKey:@"selectedCityTitle"];
-    self.districtTitleLabel.text = [data valueForKey:@"selectedDistrictTitle"];
-    self.regionTitleLabel.text = [data valueForKey:@"selectedRegionTitle"];
-    self.countryTitleLabel.text = [data valueForKey:@"selectedCountryTitle"];
-    self.stationLongitude = [data doubleForKey:@"selectedLongitude"];
-    self.stationLatitude = [data doubleForKey:@"selectedLatitude"];
+    self.stationTitleLabel.text = [data valueForKey:kSelectedStationTitle];
+    checkDataForLabel(self.stationTitleLabel);
+    self.cityTitleLabel.text = [data valueForKey:kSelectedCityTitle];
+    checkDataForLabel(self.cityTitleLabel);
+    self.districtTitleLabel.text = [data valueForKey:kSelectedDistrictTitle];
+    checkDataForLabel(self.districtTitleLabel);
+    self.regionTitleLabel.text = [data valueForKey:kSelectedRegionTitle];
+    checkDataForLabel(self.regionTitleLabel);
+    self.countryTitleLabel.text = [data valueForKey:kSelectedCountryTitle];
+    checkDataForLabel(self.countryTitleLabel);
+    self.stationLongitude = [data doubleForKey:kSelectedLongitude];
+    self.stationLatitude = [data doubleForKey:kSelectedLatitude];
 }
 
 #pragma mark - MapKit
@@ -65,9 +78,5 @@ CLLocationDistance regionRadius = 1000.0;
     MKCoordinateRegion coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 1.5, regionRadius * 1.5);
     [self.mapView setRegion:coordinateRegion animated:YES];
 }
-
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-//    [self.mapView addAnnotation:<#(nonnull id<MKAnnotation>)#>]
-//}
 
 @end

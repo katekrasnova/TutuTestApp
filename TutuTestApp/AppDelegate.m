@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ModelCities.h"
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -19,12 +20,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //
-    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"stationFrom"];
-    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"stationTo"];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:kStationFrom];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:kStationTo];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:kPickedDate];
     
     //Parse JSON and init ModelCities
-    [[ModelCities sharedInstance] loadCitiesFrom];
-    [[ModelCities sharedInstance] loadCitiesTo];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [[ModelCities sharedInstance] loadCitiesFrom];
+        [[ModelCities sharedInstance] loadCitiesTo];
+    });
+
 
     return YES;
 }

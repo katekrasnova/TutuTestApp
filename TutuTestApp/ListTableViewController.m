@@ -10,6 +10,7 @@
 #import "ModelCities.h"
 #import "StationsListTableViewCell.h"
 #import "DetailsViewController.h"
+#import "Constants.h"
 
 @interface ListTableViewController () <UISearchResultsUpdating>
 
@@ -25,8 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Set array of sities
     self.cities = [NSArray new];
-    self.isFromDirection = [[NSUserDefaults standardUserDefaults]boolForKey:@"isFromDirection"];
+    self.isFromDirection = [[NSUserDefaults standardUserDefaults]boolForKey:kIsFromDirection];
     if (self.isFromDirection) {
         self.cities = [ModelCities sharedInstance].citiesFrom;
         self.navigationItem.title = [NSString stringWithFormat:@"Откуда"];
@@ -82,7 +84,7 @@
 }
 
 - (UIButton *) makeDetailDisclosureButtonForCell:(StationsListTableViewCell *)cell {
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setBackgroundImage:[UIImage imageNamed:@"arrow.png"] forState:UIControlStateNormal];
     [button setFrame:CGRectMake(cell.frame.origin.x + self.view.frame.size.width - 47, 2, 40, 40)];
     [button addTarget: self
@@ -93,8 +95,7 @@
     return ( button );
 }
 
-- (void) accessoryButtonTapped: (UIControl *) button withEvent: (UIEvent *) event
-{
+- (void) accessoryButtonTapped: (UIControl *) button withEvent: (UIEvent *) event {
     NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint: [[[event touchesForView: button] anyObject] locationInView: self.tableView]];
     if ( indexPath == nil )
         return;
@@ -127,13 +128,13 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     void (^setStandardUserDefaults)() = ^(NSArray<ModelCity *> *array) {
-        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].stationTitle forKey:@"selectedStationTitle"];
-        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].cityTitle forKey:@"selectedCityTitle"];
-        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].districtTitle forKey:@"selectedDistrictTitle"];
-        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].regionTitle forKey:@"selectedRegionTitle"];
-        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].countryTitle forKey:@"selectedCountryTitle"];
-        [[NSUserDefaults standardUserDefaults]setDouble:array[indexPath.section].stations[indexPath.row].point.longitude forKey:@"selectedLongitude"];
-        [[NSUserDefaults standardUserDefaults]setDouble:array[indexPath.section].stations[indexPath.row].point.latitude forKey:@"selectedLatitude"];
+        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].stationTitle forKey:kSelectedStationTitle];
+        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].cityTitle forKey:kSelectedCityTitle];
+        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].districtTitle forKey:kSelectedDistrictTitle];
+        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].regionTitle forKey:kSelectedRegionTitle];
+        [[NSUserDefaults standardUserDefaults]setValue:array[indexPath.section].stations[indexPath.row].countryTitle forKey:kSelectedCountryTitle];
+        [[NSUserDefaults standardUserDefaults]setDouble:array[indexPath.section].stations[indexPath.row].point.longitude forKey:kSelectedLongitude];
+        [[NSUserDefaults standardUserDefaults]setDouble:array[indexPath.section].stations[indexPath.row].point.latitude forKey:kSelectedLatitude];
     };
     
     if (self.searchController.isActive && ![self.searchController.searchBar.text isEqualToString:[NSString stringWithFormat:@""]]) {
@@ -147,9 +148,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     void (^setStandardUserDefaults)() = ^(NSArray<ModelCity *> *array) {
         if (self.isFromDirection) {
-            [[NSUserDefaults standardUserDefaults] setValue:array[indexPath.section].stations[indexPath.row].stationTitle forKey:@"stationFrom"];
+            [[NSUserDefaults standardUserDefaults] setValue:array[indexPath.section].stations[indexPath.row].stationTitle forKey:kStationFrom];
         } else {
-            [[NSUserDefaults standardUserDefaults] setValue:array[indexPath.section].stations[indexPath.row].stationTitle forKey:@"stationTo"];
+            [[NSUserDefaults standardUserDefaults] setValue:array[indexPath.section].stations[indexPath.row].stationTitle forKey:kStationTo];
         }
     };
     if (self.searchController.isActive && ![self.searchController.searchBar.text isEqualToString:[NSString stringWithFormat:@""]]) {
