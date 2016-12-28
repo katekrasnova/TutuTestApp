@@ -1,5 +1,6 @@
 # TutuTestApp
-Тестовое задание tutu.ru
+Тестовое задание tutu.ru 
+https://github.com/tutu-ru/hire_ios-test
 
 Выбор языка: Objective-C.
 
