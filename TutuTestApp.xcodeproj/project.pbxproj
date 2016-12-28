@@ -13,20 +13,20 @@
 		D13C20101DF87B6000087D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13C200E1DF87B6000087D16 /* Main.storyboard */; };
 		D13C20151DF87B6000087D16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13C20131DF87B6000087D16 /* LaunchScreen.storyboard */; };
 		D13C20201DF87B6000087D16 /* TutuTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D13C201F1DF87B6000087D16 /* TutuTestAppTests.m */; };
-		D13C202E1DF9F3BB00087D16 /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13C202D1DF9F3BB00087D16 /* ScheduleTableViewController.m */; };
-		D176CF371DFA26780093D3FD /* ModelPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF361DFA26780093D3FD /* ModelPoint.m */; };
-		D176CF3A1DFA26930093D3FD /* ModelCity.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF391DFA26930093D3FD /* ModelCity.m */; };
-		D176CF3D1DFA26B90093D3FD /* ModelCities.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF3C1DFA26B90093D3FD /* ModelCities.m */; };
-		D176CF401DFA26D50093D3FD /* ModelStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF3F1DFA26D50093D3FD /* ModelStation.m */; };
-		D176CF431DFA28F60093D3FD /* JSONReader.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF421DFA28F60093D3FD /* JSONReader.m */; };
 		D176CF451DFA98490093D3FD /* allStations.json in Resources */ = {isa = PBXBuildFile; fileRef = D176CF441DFA98490093D3FD /* allStations.json */; };
-		D176CF481DFB07700093D3FD /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF471DFB07700093D3FD /* ListTableViewController.m */; };
 		D176CF4B1DFB081A0093D3FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D176CF4A1DFB081A0093D3FD /* MapKit.framework */; };
-		D176CF4E1DFB08670093D3FD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF4D1DFB08670093D3FD /* DetailsViewController.m */; };
-		D176CF511DFB20120093D3FD /* StationsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF501DFB20120093D3FD /* StationsListTableViewCell.m */; };
 		D176CF571DFD66F30093D3FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D176CF561DFD66F30093D3FD /* Assets.xcassets */; };
-		D176CF5A1DFD87130093D3FD /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF591DFD87130093D3FD /* CalendarViewController.m */; };
 		D176CF5D1DFDBBF40093D3FD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D176CF5C1DFDBBF40093D3FD /* Constants.m */; };
+		D1A559DB1E13857700A06558 /* StationsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559DA1E13857700A06558 /* StationsListTableViewCell.m */; };
+		D1A559E61E13860F00A06558 /* JSONReader.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559DD1E13860F00A06558 /* JSONReader.m */; };
+		D1A559E71E13860F00A06558 /* ModelCities.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559DF1E13860F00A06558 /* ModelCities.m */; };
+		D1A559E81E13860F00A06558 /* ModelCity.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559E11E13860F00A06558 /* ModelCity.m */; };
+		D1A559E91E13860F00A06558 /* ModelPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559E31E13860F00A06558 /* ModelPoint.m */; };
+		D1A559EA1E13860F00A06558 /* ModelStation.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559E51E13860F00A06558 /* ModelStation.m */; };
+		D1A559F31E13866F00A06558 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559EC1E13866F00A06558 /* CalendarViewController.m */; };
+		D1A559F41E13866F00A06558 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559EE1E13866F00A06558 /* DetailsViewController.m */; };
+		D1A559F51E13866F00A06558 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559F01E13866F00A06558 /* ListTableViewController.m */; };
+		D1A559F61E13866F00A06558 /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A559F21E13866F00A06558 /* ScheduleTableViewController.m */; };
 		F1E889216F4368986114F159 /* libPods-TutuTestAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A81406F01E130A9F1143744 /* libPods-TutuTestAppTests.a */; };
 /* End PBXBuildFile section */
 
@@ -55,31 +55,31 @@
 		D13C201B1DF87B6000087D16 /* TutuTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TutuTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13C201F1DF87B6000087D16 /* TutuTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutuTestAppTests.m; sourceTree = "<group>"; };
 		D13C20211DF87B6000087D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D13C202C1DF9F3BB00087D16 /* ScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTableViewController.h; sourceTree = "<group>"; };
-		D13C202D1DF9F3BB00087D16 /* ScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTableViewController.m; sourceTree = "<group>"; };
-		D176CF351DFA26780093D3FD /* ModelPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelPoint.h; sourceTree = "<group>"; };
-		D176CF361DFA26780093D3FD /* ModelPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelPoint.m; sourceTree = "<group>"; };
-		D176CF381DFA26930093D3FD /* ModelCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelCity.h; sourceTree = "<group>"; };
-		D176CF391DFA26930093D3FD /* ModelCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelCity.m; sourceTree = "<group>"; };
-		D176CF3B1DFA26B90093D3FD /* ModelCities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelCities.h; sourceTree = "<group>"; };
-		D176CF3C1DFA26B90093D3FD /* ModelCities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelCities.m; sourceTree = "<group>"; };
-		D176CF3E1DFA26D50093D3FD /* ModelStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelStation.h; sourceTree = "<group>"; };
-		D176CF3F1DFA26D50093D3FD /* ModelStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelStation.m; sourceTree = "<group>"; };
-		D176CF411DFA28F60093D3FD /* JSONReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONReader.h; sourceTree = "<group>"; };
-		D176CF421DFA28F60093D3FD /* JSONReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONReader.m; sourceTree = "<group>"; };
 		D176CF441DFA98490093D3FD /* allStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allStations.json; sourceTree = "<group>"; };
-		D176CF461DFB07700093D3FD /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
-		D176CF471DFB07700093D3FD /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 		D176CF4A1DFB081A0093D3FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		D176CF4C1DFB08670093D3FD /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
-		D176CF4D1DFB08670093D3FD /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		D176CF4F1DFB20120093D3FD /* StationsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationsListTableViewCell.h; sourceTree = "<group>"; };
-		D176CF501DFB20120093D3FD /* StationsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationsListTableViewCell.m; sourceTree = "<group>"; };
 		D176CF561DFD66F30093D3FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D176CF581DFD87130093D3FD /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
-		D176CF591DFD87130093D3FD /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		D176CF5B1DFDBBF40093D3FD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D176CF5C1DFDBBF40093D3FD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		D1A559D91E13857700A06558 /* StationsListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationsListTableViewCell.h; path = View/StationsListTableViewCell.h; sourceTree = "<group>"; };
+		D1A559DA1E13857700A06558 /* StationsListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationsListTableViewCell.m; path = View/StationsListTableViewCell.m; sourceTree = "<group>"; };
+		D1A559DC1E13860F00A06558 /* JSONReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONReader.h; path = Model/JSONReader.h; sourceTree = "<group>"; };
+		D1A559DD1E13860F00A06558 /* JSONReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONReader.m; path = Model/JSONReader.m; sourceTree = "<group>"; };
+		D1A559DE1E13860F00A06558 /* ModelCities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelCities.h; path = Model/ModelCities.h; sourceTree = "<group>"; };
+		D1A559DF1E13860F00A06558 /* ModelCities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelCities.m; path = Model/ModelCities.m; sourceTree = "<group>"; };
+		D1A559E01E13860F00A06558 /* ModelCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelCity.h; path = Model/ModelCity.h; sourceTree = "<group>"; };
+		D1A559E11E13860F00A06558 /* ModelCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelCity.m; path = Model/ModelCity.m; sourceTree = "<group>"; };
+		D1A559E21E13860F00A06558 /* ModelPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelPoint.h; path = Model/ModelPoint.h; sourceTree = "<group>"; };
+		D1A559E31E13860F00A06558 /* ModelPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelPoint.m; path = Model/ModelPoint.m; sourceTree = "<group>"; };
+		D1A559E41E13860F00A06558 /* ModelStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelStation.h; path = Model/ModelStation.h; sourceTree = "<group>"; };
+		D1A559E51E13860F00A06558 /* ModelStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelStation.m; path = Model/ModelStation.m; sourceTree = "<group>"; };
+		D1A559EB1E13866F00A06558 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarViewController.h; path = Controllers/CalendarViewController.h; sourceTree = "<group>"; };
+		D1A559EC1E13866F00A06558 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarViewController.m; path = Controllers/CalendarViewController.m; sourceTree = "<group>"; };
+		D1A559ED1E13866F00A06558 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailsViewController.h; path = Controllers/DetailsViewController.h; sourceTree = "<group>"; };
+		D1A559EE1E13866F00A06558 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailsViewController.m; path = Controllers/DetailsViewController.m; sourceTree = "<group>"; };
+		D1A559EF1E13866F00A06558 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListTableViewController.h; path = Controllers/ListTableViewController.h; sourceTree = "<group>"; };
+		D1A559F01E13866F00A06558 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListTableViewController.m; path = Controllers/ListTableViewController.m; sourceTree = "<group>"; };
+		D1A559F11E13866F00A06558 /* ScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleTableViewController.h; path = Controllers/ScheduleTableViewController.h; sourceTree = "<group>"; };
+		D1A559F21E13866F00A06558 /* ScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleTableViewController.m; path = Controllers/ScheduleTableViewController.m; sourceTree = "<group>"; };
 		E1B237011AD9A5A73878EBC6 /* Pods-TutuTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutuTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TutuTestAppTests/Pods-TutuTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E62B93E835D11B376AE6DD04 /* Pods-TutuTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutuTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TutuTestApp/Pods-TutuTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,14 +175,14 @@
 		D13C202F1DFA14AB00087D16 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D13C202C1DF9F3BB00087D16 /* ScheduleTableViewController.h */,
-				D13C202D1DF9F3BB00087D16 /* ScheduleTableViewController.m */,
-				D176CF461DFB07700093D3FD /* ListTableViewController.h */,
-				D176CF471DFB07700093D3FD /* ListTableViewController.m */,
-				D176CF4C1DFB08670093D3FD /* DetailsViewController.h */,
-				D176CF4D1DFB08670093D3FD /* DetailsViewController.m */,
-				D176CF581DFD87130093D3FD /* CalendarViewController.h */,
-				D176CF591DFD87130093D3FD /* CalendarViewController.m */,
+				D1A559EB1E13866F00A06558 /* CalendarViewController.h */,
+				D1A559EC1E13866F00A06558 /* CalendarViewController.m */,
+				D1A559ED1E13866F00A06558 /* DetailsViewController.h */,
+				D1A559EE1E13866F00A06558 /* DetailsViewController.m */,
+				D1A559EF1E13866F00A06558 /* ListTableViewController.h */,
+				D1A559F01E13866F00A06558 /* ListTableViewController.m */,
+				D1A559F11E13866F00A06558 /* ScheduleTableViewController.h */,
+				D1A559F21E13866F00A06558 /* ScheduleTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -190,16 +190,16 @@
 		D176CF2B1DFA23890093D3FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D176CF3B1DFA26B90093D3FD /* ModelCities.h */,
-				D176CF3C1DFA26B90093D3FD /* ModelCities.m */,
-				D176CF381DFA26930093D3FD /* ModelCity.h */,
-				D176CF391DFA26930093D3FD /* ModelCity.m */,
-				D176CF351DFA26780093D3FD /* ModelPoint.h */,
-				D176CF361DFA26780093D3FD /* ModelPoint.m */,
-				D176CF3E1DFA26D50093D3FD /* ModelStation.h */,
-				D176CF3F1DFA26D50093D3FD /* ModelStation.m */,
-				D176CF411DFA28F60093D3FD /* JSONReader.h */,
-				D176CF421DFA28F60093D3FD /* JSONReader.m */,
+				D1A559DE1E13860F00A06558 /* ModelCities.h */,
+				D1A559DF1E13860F00A06558 /* ModelCities.m */,
+				D1A559E01E13860F00A06558 /* ModelCity.h */,
+				D1A559E11E13860F00A06558 /* ModelCity.m */,
+				D1A559E21E13860F00A06558 /* ModelPoint.h */,
+				D1A559E31E13860F00A06558 /* ModelPoint.m */,
+				D1A559E41E13860F00A06558 /* ModelStation.h */,
+				D1A559E51E13860F00A06558 /* ModelStation.m */,
+				D1A559DC1E13860F00A06558 /* JSONReader.h */,
+				D1A559DD1E13860F00A06558 /* JSONReader.m */,
 				D176CF441DFA98490093D3FD /* allStations.json */,
 			);
 			name = Model;
@@ -218,8 +218,8 @@
 		D176CF521DFB20180093D3FD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D176CF4F1DFB20120093D3FD /* StationsListTableViewCell.h */,
-				D176CF501DFB20120093D3FD /* StationsListTableViewCell.m */,
+				D1A559D91E13857700A06558 /* StationsListTableViewCell.h */,
+				D1A559DA1E13857700A06558 /* StationsListTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -428,19 +428,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D176CF3A1DFA26930093D3FD /* ModelCity.m in Sources */,
-				D176CF4E1DFB08670093D3FD /* DetailsViewController.m in Sources */,
+				D1A559EA1E13860F00A06558 /* ModelStation.m in Sources */,
 				D13C200A1DF87B6000087D16 /* AppDelegate.m in Sources */,
-				D176CF401DFA26D50093D3FD /* ModelStation.m in Sources */,
-				D176CF5A1DFD87130093D3FD /* CalendarViewController.m in Sources */,
-				D176CF511DFB20120093D3FD /* StationsListTableViewCell.m in Sources */,
-				D176CF3D1DFA26B90093D3FD /* ModelCities.m in Sources */,
+				D1A559F41E13866F00A06558 /* DetailsViewController.m in Sources */,
+				D1A559DB1E13857700A06558 /* StationsListTableViewCell.m in Sources */,
 				D176CF5D1DFDBBF40093D3FD /* Constants.m in Sources */,
-				D176CF371DFA26780093D3FD /* ModelPoint.m in Sources */,
+				D1A559E61E13860F00A06558 /* JSONReader.m in Sources */,
+				D1A559E91E13860F00A06558 /* ModelPoint.m in Sources */,
+				D1A559E71E13860F00A06558 /* ModelCities.m in Sources */,
 				D13C20071DF87B6000087D16 /* main.m in Sources */,
-				D176CF431DFA28F60093D3FD /* JSONReader.m in Sources */,
-				D13C202E1DF9F3BB00087D16 /* ScheduleTableViewController.m in Sources */,
-				D176CF481DFB07700093D3FD /* ListTableViewController.m in Sources */,
+				D1A559F61E13866F00A06558 /* ScheduleTableViewController.m in Sources */,
+				D1A559F31E13866F00A06558 /* CalendarViewController.m in Sources */,
+				D1A559E81E13860F00A06558 /* ModelCity.m in Sources */,
+				D1A559F51E13866F00A06558 /* ListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
